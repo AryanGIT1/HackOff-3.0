@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% for i in all_users %}
+    <p>{{i.name}}</p>
+    {% endfor %}
+    <form method="post" action = "/ent" >
+            <input type="text" class="form-control" placeholder="name" name = "name">
+            <input type="text" class="form-control" placeholder="dob" name = "dob">
+            <input type="text" class="form-control" placeholder="adhar_no" name = "adhar_no">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </form>
+</body>
+</html>

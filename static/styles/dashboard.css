@@ -1,0 +1,57 @@
+#check p{
+    font-family: Poppins;
+    font-size: 250%;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+#check {
+    padding-top: 7.5%;
+    padding-left: 31%;
+}
+
+.col button {
+    height: 40px;
+    width: 166px;
+    margin-left: 40%;
+    border-radius: 10px;
+    background: #FF5678;
+}
+
+.col h6{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 125%;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.col p {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 125%;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.modal-content button{
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 10px;
+    background: #FF5678;
+}
+
+.modal-content img{
+    margin-top: 30px;
+    margin-left: 60px;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.modal-content {
+    border-radius: 16px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Etern!ty</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    {% if pop_true %}
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            Name : {{new_vac.name}}
+                            <br>
+                            Adhar Number : {{new_vac.adhar_no}}
+                            <br>
+                            Date of Birth : {{new_vac.dob}}
+                            <br>
+                            Vaacine Id : {{new_vac.vaccine_id}}
+                        </div>
+                        <div class="col">
+                            <img src="/static/images/Tick Square.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p style="margin-left: 26%">You are Vaccinated Successfully</p>
+                <button type="submit" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    {% elif pop_true == False %}
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <div class="row">
+                        <img src="/static/images/Danger.png" style="margin-left: 190px" alt="">
+                    </div>
+                    <br>
+                    <p style="margin-left: 170px">You are Not Vaccinated</p>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <br>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <img src="/static/images/Etern!ty.png" alt="">
+        </div>
+
+        <br><br><br><br><br>
+
+        <ul class="sidebar-navigation">
+            <li>
+                <a href="/">
+                    <img src="/static/images/Home.png" alt="">
+                    <p style="margin-left: 6px; color: #8E8C8C">Home</p>
+                </a>
+            </li>
+            <br><br>
+            <li>
+                <a href="/hospital">
+                    <img src="/static/images/Heart.png" alt="">
+                    <p style="margin-left: 1px; color: #8E8C8C">Hospital</p>
+                </a>
+            </li>
+            <br><br>
+            <li>
+                <a href="/dataset">
+                    <img src="/static/images/Info Square.png" alt="">
+                    <p style="margin-left: 12px; color: #8E8C8C">Info</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            <div class="container-fluid" id="check">
+                <p> Are your loved ones vaccinated Check Now!</p>
+                <br>
+                <form method="post" action="/">
+                    <input type="text" placeholder="   Enter Your Adhar Card Number" name="adhar_no">
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+            <br>
+            
+            <br>
+            <br>
+            <br>
+
+            <div class="container" id="graph">
+                <script>
+                    var graphs = {{ dailyconfirmed_graph | safe}};
+                    Plotly.plot('graph', graphs, {});
+                </script>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

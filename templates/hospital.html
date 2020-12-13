@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Etern!ty</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/static/styles/hospital.css">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    {% if pop_true %}
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            Name : {{new_vac.name}}
+                            <br>
+                            Adhar Number : {{new_vac.adhar_no}}
+                            <br>
+                            Date of Birth : {{new_vac.dob}}
+                            <br>
+                            Vaacine Id : {{new_vac.vaccine_id}}
+                        </div>
+                        <div class="col">
+                            <img src="/static/images/Tick Square.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p style="margin-left: 26%">You Were Vaccinated Successfully</p>
+                <button type="submit" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    {% elif pop_true == False %}
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <div class="row">
+                        <img src="/static/images/Danger.png" style="margin-left: 190px" alt="">
+                    </div>
+                    <br>
+                    <p style="margin-left: 30%">{{msg}}</p>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <br>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <img src="/static/images/Etern!ty.png" alt="">
+        </div>
+
+        <br><br><br><br><br>
+
+        <ul class="sidebar-navigation">
+            <li>
+                <a href="/">
+                    <img src="/static/images/Home.png" alt="">
+                    <p style="margin-left: 6px; color: #8E8C8C">Home</p>
+                </a>
+            </li>
+            <br><br>
+            <li>
+                <a href="/hospital">
+                    <img src="/static/images/Heart.png" alt="">
+                    <p style="margin-left: 1px; color: #8E8C8C">Hospital</p>
+                </a>
+            </li>
+            <br><br>
+            <li>
+                <a href="/dataset">
+                    <img src="/static/images/Info Square.png" alt="">
+                    <p style="margin-left: 12px; color: #8E8C8C">Info</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="container">
+            <div class="container" id="check">
+                <br>
+                <p>Hospital Administration portal </p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="container" id="main">
+                <form action="/vaccine" method="post">
+                    <p>Adhar Card Deatils</p>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Adhar Card Number" name="adhar_no">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Date of Birth" name="dob">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Vaccine Details</p>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Vaccine Id" name="vaccine_id">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Batch" name="batch_details">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="container">
+                        <button type="submit" class="btn btn-dark" data-toggle="modal"
+                            data-target="#staticBackdrop">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+</body>
+
+</html>

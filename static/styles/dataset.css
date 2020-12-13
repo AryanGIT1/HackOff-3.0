@@ -1,0 +1,39 @@
+#check {
+    margin-left: 10%;
+    font-size: 200%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: hsl(0, 0%, 0%);
+}
+
+#main a {
+    margin-top: 2.5%;
+    margin-left: 10%;
+    font-size: 125%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+}
+
+#main a:hover{
+    color: #FF5678;
+}
+
+#main img {
+    margin-top: -125px;
+    margin-left: 50px;
+    max-width: 475px;
+    max-height: 475px; 
+}
+
+#fotter a{
+    margin-left: 42%;
+    color: rgb(0, 0, 0);
+    font-size: 145%;
+}
+
+#fotter a:hover{
+    color:#FF5678;
+}

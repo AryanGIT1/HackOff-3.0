@@ -1,0 +1,61 @@
+ .content-container {
+    padding-left: 10%;
+}
+
+
+#check p {
+    margin-top: 100px;
+    margin-left: 10%;
+    font-size: 150%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+}
+
+#check input {
+    height: 50px;
+    width: 550px;
+    margin-left: 10%;
+    background: #ECECEC;
+    border-radius: 16px;
+}
+
+#check button {
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 16px;
+    background: #FF5678;
+}
+
+#check h6 {
+    margin-top: 2.5%;
+    margin-left: 10%;
+    font-size: 125%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+}
+
+.modal-content button{
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 10px;
+    background: #FF5678;
+}
+
+.modal-content img{
+    margin-top: 30px;
+    margin-left: 60px;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.modal-content {
+    border-radius: 16px;
+}
+
+#graph {
+    padding-left: -200 px;
+}

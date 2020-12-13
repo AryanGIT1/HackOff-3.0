@@ -1,0 +1,7 @@
+{
+    "parameters":{
+        "database" : "sqlite:///database.db",
+        "track_modifications" : "False",
+        "secret_key" : "secret_key"
+    }
+}
